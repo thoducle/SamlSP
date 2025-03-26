@@ -1,0 +1,27 @@
+﻿@model List<SamlSP.Models.UserClaim>
+
+@{
+    ViewData["Title"] = "User Claims";
+}
+
+<h2>User Claims</h2>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Claim Type</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.Type</td>
+                <td>@claim.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p><a href="/saml/logout">Logout</a></p>
